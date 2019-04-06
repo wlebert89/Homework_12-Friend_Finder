@@ -30,4 +30,10 @@ for (var i = 0; i < friends.length; i++){
     frndfndr(newFriend.scores, friends[i].scores);
 }
 
-console.log(results);
+// console.log(results);
+
+var resultMin = Math.min.apply(null, results);
+
+var matchIndex = results.indexOf(resultMin);
+
+console.log(friends[matchIndex].name);
