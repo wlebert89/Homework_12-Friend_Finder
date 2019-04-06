@@ -1,13 +1,33 @@
-person1 = [2, 2, 3, 4];
+var friends = [{
+    name: "Desquarian",
+    photo: "/",
+    scores: [3, 2, 5, 1, 4, 2, 3, 1, 1, 4]
+},
+{
+    name: "Gnocturne",
+    photo: "/",
+    scores: [1, 4, 2, 1, 5, 2, 3, 3, 1, 4]
+}
+];
 
-person2 = [2, 4, 3, 1];
-
-function frndfndr(arr1, arr2) {
-    var sum = 0
-    for (var i = 0; i < arr1.length; i++) {
-        sum += Math.abs(arr1[i] - arr2[i]);
-    }
-    return sum;
+var newFriend = {
+    name: "Chad",
+    photo: "/",
+    scores: [1, 4, 2, 1, 5, 2, 3, 3, 1, 4]
 }
 
-console.log(frndfndr(person1, person2));
+var results = [];
+
+function frndfndr(newArray, allArray) {
+    var sum = 0
+    for (var i = 0; i < newArray.length; i++) {
+        sum += Math.abs(newArray[i] - allArray[i]);
+    }
+    results.push(sum);
+}
+
+for (var i = 0; i < friends.length; i++){
+    frndfndr(newFriend.scores, friends[i].scores);
+}
+
+console.log(results);

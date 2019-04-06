@@ -21,6 +21,23 @@
 </head>
 
 <body>
+    <!-- Modal -->
+    <div class="modal fade" id="friendModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Congratulations!</h5>
+
+                </div>
+                <div class="modal-body">
+                    Ricky Powderback is your new best friend!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Got It!</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -47,7 +64,7 @@
                         Accusamus voluptate.</p>
                     <select class="form-control select" id="answer-1">
                         <option hidden>Select</option>
-                        <option>1 (Stronly Disagree)</option>
+                        <option>1 (Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
@@ -59,7 +76,7 @@
                         Accusamus voluptate.</p>
                     <select class="form-control select" id="answer-2">
                         <option hidden>Select</option>
-                        <option>1 (Stronly Disagree)</option>
+                        <option>1 (Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
@@ -71,7 +88,7 @@
                         Accusamus voluptate.</p>
                     <select class="form-control select" id="answer-3">
                         <option hidden>Select</option>
-                        <option>1 (Stronly Disagree)</option>
+                        <option>1 (Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
@@ -83,7 +100,7 @@
                         Accusamus voluptate.</p>
                     <select class="form-control select" id="answer-4">
                         <option hidden>Select</option>
-                        <option>1 (Stronly Disagree)</option>
+                        <option>1 (Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
@@ -95,7 +112,7 @@
                         Accusamus voluptate.</p>
                     <select class="form-control select" id="answer-5">
                         <option hidden>Select</option>
-                        <option>1 (Stronly Disagree)</option>
+                        <option>1 (Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
@@ -107,7 +124,7 @@
                         Accusamus voluptate.</p>
                     <select class="form-control select" id="answer-6">
                         <option hidden>Select</option>
-                        <option>1 (Stronly Disagree)</option>
+                        <option>1 (Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
@@ -119,7 +136,7 @@
                         Accusamus voluptate.</p>
                     <select class="form-control select" id="answer-7">
                         <option hidden>Select</option>
-                        <option>1 (Stronly Disagree)</option>
+                        <option>1 (Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
@@ -131,7 +148,7 @@
                         Accusamus voluptate.</p>
                     <select class="form-control select" id="answer-8">
                         <option hidden>Select</option>
-                        <option>1 (Stronly Disagree)</option>
+                        <option>1 (Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
@@ -143,7 +160,7 @@
                         Accusamus voluptate.</p>
                     <select class="form-control select" id="answer-9">
                         <option hidden>Select</option>
-                        <option>1 (Stronly Disagree)</option>
+                        <option>1 (Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
@@ -155,14 +172,15 @@
                         Accusamus voluptate.</p>
                     <select class="form-control select" id="answer-10">
                         <option hidden>Select</option>
-                        <option>1 (Stronly Disagree)</option>
+                        <option>1 (Strongly Disagree)</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
                         <option>5 (Strongly Agree)</option>
                     </select>
                     <br>
-                    <button type="submit" id="submit-button" class="btn btn-primary btn-block p-3">Submit</button>
+                    <button type="submit" id="submit-button" class="btn btn-primary btn-block p-3" data-toggle="modal"
+                        data-target="#friendModal">Submit</button>
                     <hr>
                 </form>
                 <div>
@@ -196,10 +214,8 @@
 
             $.post("/api/friends", newFriend)
                 .then(function (data) {
-                    console.log(data);
-                    alert("Profile added!");
+                    console.log("New survey information added: " + data);
                 });
-
         })
     </script>
 

@@ -39,10 +39,18 @@ app.get("/api/friends", function (req, res) {
 
 app.post("/api/friends", function (req, res) {
     var newFriend = req.body;
+    // using unshift to ensure that the newly added info is at index 0
+    friends.unshift(newFriend);
 
-    friends.push(newFriend);
+    var results = []
 
-    res.json(newFriend);
+    for (var i = 1; i < friends.length; i++){
+        scores.push(friends[i].scores);
+    }
+    console.log("DB scores: " + scores);
+    console.log("");
+    console.log("New name: " + friends[0].name);
+    console.log("New scores: " + friends[0].scores);
 });
 
 app.listen(PORT, function () {
