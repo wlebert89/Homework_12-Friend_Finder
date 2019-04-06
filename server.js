@@ -17,7 +17,7 @@ var friends = [{
     {
         name: "Gnocturne",
         photo: "/",
-        scores: [1, 4, 2, 1, 5, 2, 4, 3, 1, 4]
+        scores: [1, 4, 2, 1, 5, 2, 4, 3, 1, 2]
     },
     {
         name: "Dorian",
@@ -61,16 +61,12 @@ app.post("/api/friends", function (req, res) {
         frndfndr(friends[0].scores, friends[i].scores);
     }
 
-    console.log("Results: " + results);
-
     var resultMin = Math.min.apply(null, results);
-
-    console.log("Result min: " + resultMin);
 
     // adding 1 to the matchIndex to account for the new data being at index 0
     var matchIndex = results.indexOf(resultMin) + 1;
 
-    console.log("New best friend: " + friends[matchIndex].name);
+    return res.json(friends[matchIndex]);
 });
 
 app.listen(PORT, function () {

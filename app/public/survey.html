@@ -213,8 +213,10 @@
 
             $.post("/api/friends", newFriend)
                 .then(function (data) {
-                    console.log("New survey information added: " + data);
+                    console.log("New best friend: " + data.name);
+                    $("#modal-text").text("Your new best friend is " + data.name + "!")
                 });
+
         })
     </script>
 
