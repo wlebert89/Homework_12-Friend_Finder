@@ -18,19 +18,17 @@ var newFriend = {
 
 var results = [];
 
-function frndfndr(newArray, allArray) {
-    var sum = 0
+function frndfndr(newArray, allArrays) {
+    var difference = 0
     for (var i = 0; i < newArray.length; i++) {
-        sum += Math.abs(newArray[i] - allArray[i]);
+        sum += Math.abs(newArray[i] - allArrays[i]);
     }
-    results.push(sum);
+    results.push(difference);
 }
 
 for (var i = 0; i < friends.length; i++){
     frndfndr(newFriend.scores, friends[i].scores);
 }
-
-// console.log(results);
 
 var resultMin = Math.min.apply(null, results);
 

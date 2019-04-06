@@ -17,7 +17,12 @@ var friends = [{
     {
         name: "Gnocturne",
         photo: "/",
-        scores: [1, 4, 2, 1, 5, 2, 3, 3, 1, 4]
+        scores: [1, 4, 2, 1, 5, 2, 4, 3, 1, 4]
+    },
+    {
+        name: "Dorian",
+        photo: "/",
+        scores: [5, 1, 4, 3, 5, 4, 3, 2, 2, 5]
     }
 ];
 
@@ -42,15 +47,30 @@ app.post("/api/friends", function (req, res) {
     // using unshift to ensure that the newly added info is at index 0
     friends.unshift(newFriend);
 
-    var results = []
+    var results = [];
 
-    for (var i = 1; i < friends.length; i++){
-        scores.push(friends[i].scores);
+    function frndfndr(arr1, arr2) {
+        var difference = 0
+        for (var i = 0; i < arr1.length; i++) {
+            difference += Math.abs(arr1[i] - arr2[i]);
+        }
+        results.push(difference);
     }
-    console.log("DB scores: " + scores);
-    console.log("");
-    console.log("New name: " + friends[0].name);
-    console.log("New scores: " + friends[0].scores);
+
+    for (var i = 1; i < friends.length; i++) {
+        frndfndr(friends[0].scores, friends[i].scores);
+    }
+
+    console.log("Results: " + results);
+
+    var resultMin = Math.min.apply(null, results);
+
+    console.log("Result min: " + resultMin);
+
+    // adding 1 to the matchIndex to account for the new data being at index 0
+    var matchIndex = results.indexOf(resultMin) + 1;
+
+    console.log("New best friend: " + friends[matchIndex].name);
 });
 
 app.listen(PORT, function () {
