@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Survey</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
@@ -52,7 +51,7 @@
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
-                        <option>5 (Strongly Agree</option>
+                        <option>5 (Strongly Agree)</option>
                     </select>
                     <br>
                     <h3>Question 2</h3>
@@ -64,7 +63,7 @@
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
-                        <option>5 (Strongly Agree</option>
+                        <option>5 (Strongly Agree)</option>
                     </select>
                     <br>
                     <h3>Question 3</h3>
@@ -76,7 +75,7 @@
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
-                        <option>5 (Strongly Agree</option>
+                        <option>5 (Strongly Agree)</option>
                     </select>
                     <br>
                     <h3>Question 4</h3>
@@ -88,7 +87,7 @@
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
-                        <option>5 (Strongly Agree</option>
+                        <option>5 (Strongly Agree)</option>
                     </select>
                     <br>
                     <h3>Question 5</h3>
@@ -100,7 +99,7 @@
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
-                        <option>5 (Strongly Agree</option>
+                        <option>5 (Strongly Agree)</option>
                     </select>
                     <br>
                     <h3>Question 6</h3>
@@ -112,7 +111,7 @@
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
-                        <option>5 (Strongly Agree</option>
+                        <option>5 (Strongly Agree)</option>
                     </select>
                     <br>
                     <h3>Question 7</h3>
@@ -124,7 +123,7 @@
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
-                        <option>5 (Strongly Agree</option>
+                        <option>5 (Strongly Agree)</option>
                     </select>
                     <br>
                     <h3>Question 8</h3>
@@ -136,7 +135,7 @@
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
-                        <option>5 (Strongly Agree</option>
+                        <option>5 (Strongly Agree)</option>
                     </select>
                     <br>
                     <h3>Question 9</h3>
@@ -148,7 +147,7 @@
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
-                        <option>5 (Strongly Agree</option>
+                        <option>5 (Strongly Agree)</option>
                     </select>
                     <br>
                     <h3>Question 10</h3>
@@ -160,16 +159,50 @@
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
-                        <option>5 (Strongly Agree</option>
+                        <option>5 (Strongly Agree)</option>
                     </select>
-
                     <br>
-                    <button type="submit" class="btn btn-primary btn-block p-3">Submit</button>
+                    <button type="submit" id="submit-button" class="btn btn-primary btn-block p-3">Submit</button>
                     <hr>
                 </form>
+                <div>
+                    <a class="" href="api/friends">API Friends List</a>
+                </div>
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        // Form handling
+        $("#submit-button").on("click", function (event) {
+            event.preventDefault();
+
+            var newFriend = {
+                name: $("#name").val().trim(),
+                photo: $("#photo-link").val().trim(),
+                scores: [
+                    parseInt($("#answer-1").val()),
+                    parseInt($("#answer-2").val()),
+                    parseInt($("#answer-3").val()),
+                    parseInt($("#answer-4").val()),
+                    parseInt($("#answer-5").val()),
+                    parseInt($("#answer-6").val()),
+                    parseInt($("#answer-7").val()),
+                    parseInt($("#answer-8").val()),
+                    parseInt($("#answer-9").val()),
+                    parseInt($("#answer-10").val()),
+                ]
+            };
+
+            $.post("/api/friends", newFriend)
+                .then(function (data) {
+                    console.log(data);
+                    alert("Profile added!");
+                });
+
+        })
+    </script>
+
 </body>
 
 </html>

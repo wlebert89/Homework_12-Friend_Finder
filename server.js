@@ -31,13 +31,13 @@ app.get("/survey", function (req, res) {
     res.sendFile(path.join(__dirname, "app/public/survey.html"));
 });
 
-app.get("api/friends", function (req, res) {
+app.get("/api/friends", function (req, res) {
     return res.json(friends);
 });
 
 // Post route:
 
-app.post("api/friends", function (req, res) {
+app.post("/api/friends", function (req, res) {
     var newFriend = req.body;
 
     friends.push(newFriend);
