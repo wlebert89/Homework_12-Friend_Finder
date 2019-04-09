@@ -31,6 +31,7 @@
                 <div id="modal-text" class="modal-body">
                     <!-- Text inserted from jQuery here... -->
                 </div>
+                <img src="" alt="New Best Friend" id="modal-pic">
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Got It!</button>
                 </div>
@@ -41,7 +42,7 @@
         <div class="row">
             <div class="col-12">
                 <br>
-                <h2 class="display 4">Survey Questions</h2>
+                <h2 class="display 4">Friendship Survey</h2>
                 <hr>
                 <h3>About You</h3>
             </div>
@@ -59,8 +60,7 @@
                     </div>
                     <hr>
                     <h3>Question 1</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At reprehenderit similique officia.
-                        Accusamus voluptate.</p>
+                    <p>Happiness is a warm gun.</p>
                     <select class="form-control select" id="answer-1">
                         <option hidden>Select</option>
                         <option>1 (Strongly Disagree)</option>
@@ -71,8 +71,7 @@
                     </select>
                     <br>
                     <h3>Question 2</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At reprehenderit similique officia.
-                        Accusamus voluptate.</p>
+                    <p>All you need is love.</p>
                     <select class="form-control select" id="answer-2">
                         <option hidden>Select</option>
                         <option>1 (Strongly Disagree)</option>
@@ -83,8 +82,7 @@
                     </select>
                     <br>
                     <h3>Question 3</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At reprehenderit similique officia.
-                        Accusamus voluptate.</p>
+                    <p>Manic depression's a frustrating mess.</p>
                     <select class="form-control select" id="answer-3">
                         <option hidden>Select</option>
                         <option>1 (Strongly Disagree)</option>
@@ -95,8 +93,7 @@
                     </select>
                     <br>
                     <h3>Question 4</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At reprehenderit similique officia.
-                        Accusamus voluptate.</p>
+                    <p>Only love can break your heart.</p>
                     <select class="form-control select" id="answer-4">
                         <option hidden>Select</option>
                         <option>1 (Strongly Disagree)</option>
@@ -107,8 +104,7 @@
                     </select>
                     <br>
                     <h3>Question 5</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At reprehenderit similique officia.
-                        Accusamus voluptate.</p>
+                    <p>The love you take is equal to the love you make.</p>
                     <select class="form-control select" id="answer-5">
                         <option hidden>Select</option>
                         <option>1 (Strongly Disagree)</option>
@@ -119,8 +115,7 @@
                     </select>
                     <br>
                     <h3>Question 6</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At reprehenderit similique officia.
-                        Accusamus voluptate.</p>
+                    <p>When you dance, I can really love.</p>
                     <select class="form-control select" id="answer-6">
                         <option hidden>Select</option>
                         <option>1 (Strongly Disagree)</option>
@@ -131,8 +126,7 @@
                     </select>
                     <br>
                     <h3>Question 7</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At reprehenderit similique officia.
-                        Accusamus voluptate.</p>
+                    <p>You can't always get what you want. But if you try sometimes, you just might find, you get what you need.</p>
                     <select class="form-control select" id="answer-7">
                         <option hidden>Select</option>
                         <option>1 (Strongly Disagree)</option>
@@ -143,8 +137,7 @@
                     </select>
                     <br>
                     <h3>Question 8</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At reprehenderit similique officia.
-                        Accusamus voluptate.</p>
+                    <p>Rock n' Roll ain't noise pollution.</p>
                     <select class="form-control select" id="answer-8">
                         <option hidden>Select</option>
                         <option>1 (Strongly Disagree)</option>
@@ -155,8 +148,7 @@
                     </select>
                     <br>
                     <h3>Question 9</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At reprehenderit similique officia.
-                        Accusamus voluptate.</p>
+                    <p>You've got to hide your love away.</p>
                     <select class="form-control select" id="answer-9">
                         <option hidden>Select</option>
                         <option>1 (Strongly Disagree)</option>
@@ -167,8 +159,7 @@
                     </select>
                     <br>
                     <h3>Question 10</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At reprehenderit similique officia.
-                        Accusamus voluptate.</p>
+                    <p>Money can't buy me love.</p>
                     <select class="form-control select" id="answer-10">
                         <option hidden>Select</option>
                         <option>1 (Strongly Disagree)</option>
@@ -183,7 +174,7 @@
                     <hr>
                 </form>
                 <div>
-                    <a class="" href="api/friends">API Friends List</a>
+                    <a class="" href="api/friends" target="_blank">API Friends List</a> | <a href="https://github.com/wlebert89/Homework_12-Friend_Finder" target="_blank">Github Repo</a>
                 </div>
             </div>
         </div>
@@ -215,8 +206,21 @@
                 .then(function (data) {
                     console.log("New best friend: " + data.name);
                     $("#modal-text").text("Your new best friend is " + data.name + "!")
+                    $("#modal-pic").attr("src", data.photo).addClass("img-fluid");
                 });
 
+            $("#name").val("");
+            $("#photo-link").val("");
+            $("#answer-1").val("");
+            $("#answer-2").val("");
+            $("#answer-3").val("");
+            $("#answer-4").val("");
+            $("#answer-5").val("");
+            $("#answer-6").val("");
+            $("#answer-7").val("");
+            $("#answer-8").val("");
+            $("#answer-9").val("");
+            $("#answer-10").val("");
         })
     </script>
 
